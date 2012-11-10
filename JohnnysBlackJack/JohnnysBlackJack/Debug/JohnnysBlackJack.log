@@ -1,4 +1,4 @@
-﻿Build started 11/7/2012 8:48:19 PM.
+﻿Build started 11/9/2012 10:36:49 PM.
      1>Project "C:\Users\tripgod\Dropbox\cplusplus\Program2\JohnnysBlackJack\JohnnysBlackJack\JohnnysBlackJack.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\JohnnysBlackJack.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -10,8 +10,7 @@
          JohnnysBlackJack.cpp
          All outputs are up-to-date.
        CoreResGen:
-         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile Form1.resX,Debug\JohnnysBlackJack.Form1.resources
-         Processing resource file "Form1.resX" into "Debug\JohnnysBlackJack.Form1.resources".
+         All outputs are up-to-date.
        ResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -30,4 +29,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.92
+Time Elapsed 00:00:02.63
