@@ -10,9 +10,9 @@
 ***   Course # and Title		:	   		CISC 192 - C++			***
 ***   Class Meeting Time		:	   		TTh 9:35 - 12:40		***
 ***   Instructor				:			Professor Forman		***
-***   Hours						:			8						***
+***   Hours						:			11						***
 ***   Difficulty				:			6						***
-***   Completion Date			:			11/17/2012				***
+***   Completion Date			:			11/13/2012				***
 ***   Project Name				:  			JohnnysBlackJack		***	 
 ***																	***
 ***********************************************************************
@@ -143,6 +143,8 @@ namespace JohnnysBlackJack {
 	private: System::Windows::Forms::ComboBox^  comboBoxCheat;
 	private: System::Windows::Forms::Button^  buttonCheat;
 	private: System::Windows::Forms::Label^  labelSelectCheat;
+	private: System::Windows::Forms::Label^  labelPlayerStats;
+	private: System::Windows::Forms::Label^  labelDealerStats;
 
 
 
@@ -198,6 +200,8 @@ namespace JohnnysBlackJack {
 			this->comboBoxCheat = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonCheat = (gcnew System::Windows::Forms::Button());
 			this->labelSelectCheat = (gcnew System::Windows::Forms::Label());
+			this->labelPlayerStats = (gcnew System::Windows::Forms::Label());
+			this->labelDealerStats = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBoxBJGif))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBoxPlayerCard1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBoxPlayerCard2))->BeginInit();
@@ -213,7 +217,7 @@ namespace JohnnysBlackJack {
 				static_cast<System::Byte>(0)));
 			this->labelWelcome->Location = System::Drawing::Point(215, 18);
 			this->labelWelcome->Name = L"labelWelcome";
-			this->labelWelcome->Size = System::Drawing::Size(853, 81);
+			this->labelWelcome->Size = System::Drawing::Size(824, 81);
 			this->labelWelcome->TabIndex = 0;
 			this->labelWelcome->Text = L"Welcome to Johnny\'s Black Jack Parlor";
 			this->labelWelcome->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -286,6 +290,7 @@ namespace JohnnysBlackJack {
 			this->buttonCredits->TabIndex = 7;
 			this->buttonCredits->Text = L"Credits";
 			this->buttonCredits->UseVisualStyleBackColor = true;
+			this->buttonCredits->Click += gcnew System::EventHandler(this, &Form1::buttonCredits_Click);
 			// 
 			// labelEnterName
 			// 
@@ -538,6 +543,7 @@ namespace JohnnysBlackJack {
 			this->labelPlayerObservation->Size = System::Drawing::Size(350, 23);
 			this->labelPlayerObservation->TabIndex = 28;
 			this->labelPlayerObservation->Text = L"Player\'s hand value: ";
+			this->labelPlayerObservation->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->labelPlayerObservation->Visible = false;
 			// 
 			// labelDealerObservation
@@ -557,7 +563,7 @@ namespace JohnnysBlackJack {
 				static_cast<System::Byte>(0)));
 			this->labelDealerAction->Location = System::Drawing::Point(254, 389);
 			this->labelDealerAction->Name = L"labelDealerAction";
-			this->labelDealerAction->Size = System::Drawing::Size(759, 23);
+			this->labelDealerAction->Size = System::Drawing::Size(759, 106);
 			this->labelDealerAction->TabIndex = 30;
 			this->labelDealerAction->Visible = false;
 			// 
@@ -578,8 +584,10 @@ namespace JohnnysBlackJack {
 			this->comboBoxCheat->Font = (gcnew System::Drawing::Font(L"Candara", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->comboBoxCheat->FormattingEnabled = true;
-			this->comboBoxCheat->Items->AddRange(gcnew cli::array< System::Object^  >(6) {L"Player gets BlackJack", L"Dealer gets BlackJack", 
-				L"Both get BlackJack", L"Player Busts and Dealer under threshold", L"Player Busts and Dealer within threshold", L"Dealer Busts and Player does not"});
+			this->comboBoxCheat->Items->AddRange(gcnew cli::array< System::Object^  >(12) {L"Player gets BlackJack", L"Dealer gets BlackJack", 
+				L"Both get BlackJack", L"Player Busts and Dealer under threshold", L"Player Busts and Dealer within threshold", L"Dealer Busts and Player does not", 
+				L"Player has 10 and Dealer has 10", L"Player has 10 and Dealer has 15", L"Player has 10 and Dealer has 16", L"Player has 20 and Dealer has 10", 
+				L"Player has 20 and Dealer has 15", L"Player has 20 and Dealer has 16"});
 			this->comboBoxCheat->Location = System::Drawing::Point(709, 343);
 			this->comboBoxCheat->Name = L"comboBoxCheat";
 			this->comboBoxCheat->Size = System::Drawing::Size(304, 23);
@@ -609,11 +617,35 @@ namespace JohnnysBlackJack {
 			this->labelSelectCheat->Text = L"Select condition and press CHEAT";
 			this->labelSelectCheat->Visible = false;
 			// 
+			// labelPlayerStats
+			// 
+			this->labelPlayerStats->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->labelPlayerStats->Location = System::Drawing::Point(358, 124);
+			this->labelPlayerStats->Name = L"labelPlayerStats";
+			this->labelPlayerStats->Size = System::Drawing::Size(102, 177);
+			this->labelPlayerStats->TabIndex = 35;
+			this->labelPlayerStats->Text = L"Wins: \r\n\r\nLosses: ";
+			this->labelPlayerStats->Visible = false;
+			// 
+			// labelDealerStats
+			// 
+			this->labelDealerStats->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->labelDealerStats->Location = System::Drawing::Point(813, 124);
+			this->labelDealerStats->Name = L"labelDealerStats";
+			this->labelDealerStats->Size = System::Drawing::Size(138, 177);
+			this->labelDealerStats->TabIndex = 36;
+			this->labelDealerStats->Text = L"Wins: \r\n\r\nLosses: ";
+			this->labelDealerStats->Visible = false;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1264, 562);
+			this->Controls->Add(this->labelDealerStats);
+			this->Controls->Add(this->labelPlayerStats);
 			this->Controls->Add(this->labelSelectCheat);
 			this->Controls->Add(this->buttonCheat);
 			this->Controls->Add(this->comboBoxCheat);
@@ -650,6 +682,7 @@ namespace JohnnysBlackJack {
 			this->Controls->Add(this->labelWelcome);
 			this->Name = L"Form1";
 			this->Text = L"Johnny\'s Black Jack Parlor";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBoxBJGif))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBoxPlayerCard1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBoxPlayerCard2))->EndInit();
@@ -694,7 +727,10 @@ namespace JohnnysBlackJack {
 
 	private: System::Void buttonInstructions_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
-				 MessageBox::Show( "After the player and dealer have been randomly dealt two cards each:\n\n"
+				 MessageBox::Show( "Login and click the DEAL button. Press HIT if you want another card.\n"
+								+ "Press STAY if you don't want another card.\n\n"
+								+ "You can set up certain scenarios with the CHEAT feature.\n\n"
+								+ "After the player and dealer have been randomly dealt two cards each:\n\n"
 								+ "If Black Jack occurs (= first two cards add up to 21) for either the player "
 								+ "or the dealer, then the game ends immediately and the Black Jacker is the winner.\n\n"
 								+ "Whenever the player goes \"bust\", the dealer immediately wins.\n\n"
@@ -778,10 +814,23 @@ private: System::Void buttonSubmit_Click(System::Object^  sender, System::EventA
 			 buttonCheat->Visible = true;
 			 comboBoxCheat->Visible = true;
 			 labelSelectCheat->Visible = true;
+			 labelPlayerStats->Visible = true;
+			 labelDealerStats->Visible = true;
 		 }
 
 private: System::Void buttonDeal_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
+
+			 int playerLosses,
+				 dealerLosses;
+
+			 
+			 // Update Stats
+			 playerLosses = gameNumber - (gameNumber - dealerWins);
+			 dealerLosses = gameNumber - (gameNumber - playerWins);
+			 labelPlayerStats->Text = "Wins: " + playerWins + "\n\nLosses: " + playerLosses;
+			 labelDealerStats->Text = "Wins: " + dealerWins + "\n\nLosses: " + dealerLosses;
+
 			 // Set game counter
 			 gameNumber++;
 			 labelGameNumber->Text = "Game #" + gameNumber;
@@ -819,7 +868,7 @@ void dealCard(int cardToDeal)
 	// CHEAT Button Activated
 	if (cheatActivated)
 	{
-		labelWelcome->Text = "I'm a cheater";
+		labelWelcome->Text = "I'm a Cheater";
 
 		if (comboBoxCheat->Text == "Player gets BlackJack")
 		{
@@ -982,6 +1031,168 @@ void dealCard(int cardToDeal)
 				cardToDeal = 4;
 			}
 		}
+
+		else if (comboBoxCheat->Text == "Player has 10 and Dealer has 10")
+		{
+			if (cardToDeal == 100)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 1;
+			}
+
+			else if (cardToDeal == 101)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 2;
+			}
+
+			else if (cardToDeal == 102)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 3;
+			}
+
+			else if (cardToDeal == 103)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 4;
+			}
+		}
+
+		else if (comboBoxCheat->Text == "Player has 10 and Dealer has 15")
+		{
+			if (cardToDeal == 100)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 1;
+			}
+
+			else if (cardToDeal == 101)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 2;
+			}
+
+			else if (cardToDeal == 102)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 3;
+			}
+
+			else if (cardToDeal == 103)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 4;
+			}
+		}
+
+		else if (comboBoxCheat->Text == "Player has 10 and Dealer has 16")
+		{
+			if (cardToDeal == 100)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 1;
+			}
+
+			else if (cardToDeal == 101)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 2;
+			}
+
+			else if (cardToDeal == 102)
+			{
+				randomInt = 16;	// Six
+				cardToDeal = 3;
+			}
+
+			else if (cardToDeal == 103)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 4;
+			}
+		}
+
+		else if (comboBoxCheat->Text == "Player has 20 and Dealer has 10")
+		{
+			if (cardToDeal == 100)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 1;
+			}
+
+			else if (cardToDeal == 101)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 2;
+			}
+
+			else if (cardToDeal == 102)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 3;
+			}
+
+			else if (cardToDeal == 103)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 4;
+			}
+		}
+
+		else if (comboBoxCheat->Text == "Player has 20 and Dealer has 15")
+		{
+			if (cardToDeal == 100)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 1;
+			}
+
+			else if (cardToDeal == 101)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 2;
+			}
+
+			else if (cardToDeal == 102)
+			{
+				randomInt = 12;	// Five
+				cardToDeal = 3;
+			}
+
+			else if (cardToDeal == 103)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 4;
+			}
+		}
+
+		else if (comboBoxCheat->Text == "Player has 20 and Dealer has 16")
+		{
+			if (cardToDeal == 100)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 1;
+			}
+
+			else if (cardToDeal == 101)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 2;
+			}
+
+			else if (cardToDeal == 102)
+			{
+				randomInt = 16;	// Six
+				cardToDeal = 3;
+			}
+
+			else if (cardToDeal == 103)
+			{
+				randomInt = 47;	// King
+				cardToDeal = 4;
+			}
+		}
 	} // End of CHEAT patch
 
 	intCardValue = randomInt / 4 + 2;
@@ -1105,6 +1316,7 @@ void dealCard(int cardToDeal)
 				dealerWins++;
 			}
 
+			/* Moved to after all cards dealt
 			// Player stands when Dealer is within threshold
 			else if (playerCardValueSum <= 15 && dealerCardValueSum >= 16)
 			{
@@ -1114,7 +1326,7 @@ void dealCard(int cardToDeal)
 
 				labelDealerAction->Text = "You lose. You really should've hit.";
 				dealerWins++;
-			}
+			}*/
 
 			//// Dealer does not take a third card if hand value is > 15 and Player busts
 			////else if (dealerCardValueSum > 15 || playerCardValueSum > 21)
@@ -1136,7 +1348,8 @@ void dealCard(int cardToDeal)
 				pictureBoxDealerCard3->Image = imageListCards->Images[randomInt];
 				dealerCardValueSum += intCardValue;
 			}
-			// Now all cards have been dealt
+
+			/************** Now all cards have been dealt ***************/
 
 			// The Dealer takes a third card and busts
 			if (dealerCardValueSum > 21)
@@ -1148,8 +1361,19 @@ void dealCard(int cardToDeal)
 			// Player's total is greater than Dealer's but isn't a bust
 			else if (playerCardValueSum > dealerCardValueSum && playerCardValueSum <= 21)
 			{
-				labelDealerAction->Text = "Winner Winner, Chicken Chicken";
+				labelDealerAction->Text = "Winner Winner, Chicken Dinner";
 				playerWins++;
+			}
+
+			// Player stands when Dealer is within threshold
+			else if (playerCardValueSum <= 15 && dealerCardValueSum >= 16)
+			{
+				// Hide the third card
+				pictureBoxDealerCard3->Visible = false;
+				labelDealerCardValue3->Visible = false;
+
+				labelDealerAction->Text = "You lose. You really should've hit.";
+				dealerWins++;
 			}
 
 			// There's no other way the Player can win
@@ -1192,6 +1416,17 @@ private: System::Void buttonStay_Click(System::Object^  sender, System::EventArg
 
 private: System::Void buttonCheat_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
+
+			 int playerLosses,
+				 dealerLosses;
+
+			 
+			 // Update Stats
+			 playerLosses = gameNumber - (gameNumber - dealerWins);
+			 dealerLosses = gameNumber - (gameNumber - playerWins);
+			 labelPlayerStats->Text = "Wins: " + playerWins + "\n\nLosses: " + playerLosses;
+			 labelDealerStats->Text = "Wins: " + dealerWins + "\n\nLosses: " + dealerLosses;
+
 			 // We are cheaters
 			 cheatActivated = true;
 			 
@@ -1235,7 +1470,81 @@ private: System::Void buttonResults_Click(System::Object^  sender, System::Event
 
 private: System::Void buttonExit_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
+			 ///////////////////////////////////////////////////////////////////
+			 //				LOCAL VARIABLES/OBJECTS
+			 ///////////////////////////////////////////////////////////////////
+			 Windows::Forms::DialogResult	playAnother;
+			 System::Media::SoundPlayer		soundPlayer( "wav/portalradio.wav");
+			 ///////////////////////////////////////////////////////////////////
 
+			 soundPlayer.PlayLooping();
+
+			 if (dealerWins > playerWins)
+				MessageBox::Show("Thanks for being such a good sport, " + playerName + ", in your " + gameNumber + " games.\n\n"
+								+ "Too bad you won only " + playerWins + " game(s) while The Dealer won " + dealerWins + " game(s).");
+
+			 else if (dealerWins == playerWins)
+				 MessageBox::Show("After " + gameNumber + " games, " + playerName + ", you couldn't beat The Dealer.\n\n"
+								+ "You won " + playerWins + " game(s) while The Dealer won " + dealerWins + " game(s) as well.");
+
+			 else
+				 MessageBox::Show("I know you had fun, " + playerName + ", in your " + gameNumber + " games.\n\n"
+								+ "You outplayed The Dealer by winning " + playerWins + " game(s). The Dealer only won " + dealerWins + " game(s).");
+
+			 playAnother = MessageBox::Show("Do you want to play another game?", "Are you sure?", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+			 if (playAnother == Windows::Forms::DialogResult::No)
+				 Close();
+			 
+		 }
+
+private: System::Void buttonCredits_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 MessageBox::Show( 
+				"*************************************************************************************\n"
+				 "**************************************** ID INFO ************************************\n\n"
+				 "	Programmer		:	Johnny Brinsko\n"
+				 "	Assignment #		:	Program #2\n"
+				 "	Assignment Name		:	Black Jack\n"
+				 "	Course # and Title		:	CISC 192  - C++\n"
+				 "	Class Meeting Time		:	TTh 9:35 - 12:40\n"
+				 "	Instructor			:	Professor Forman\n"
+				 "	Hours			:	11\n"
+				 "	Difficulty			:	6\n"
+				 "	Completion Date		:	11/13/2012\n"
+				 "	Project Name		:	JohnnysBlackJack\n\n"
+				 "**************************************************************************************\n"
+				 "**************************************** CREDITS ************************************\n\n"
+				 "	Thanks to Professor Forman and Tim for completing the \n"
+				 "			learning triangle together\n\n"
+				 "*************************************************************************************\n"
+				 "**************************************** MEDIA *************************************\n\n"
+				 "Farewell music:\n"
+				 "http://www.gamefront.com/files/12899141/Portal_Radio_Loop" 
+				 "\n\nJose's cards from class, provided by Professor Forman"
+				 "\n\nAnimated gif of blackjack dealing\n"
+				 "	(used gifsoup.com to convert video to gif)\n"
+				 "http://www.youtube.com/watch?v=V6WQrbauJEQ"
+				 );
+		MessageBox::Show(
+				 "*************************************************************************************\n"
+				 "************************************** # OF STARS **********************************\n\n"
+				 "2 stars\n\n"
+				 "*************************************************************************************\n"
+				 "**************************************** STARS *************************************\n\n"
+				 "1. (2) Add a series of Cheat buttons that force certain basic hands to be dealt.\n"
+				 );
+		 }
+
+private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 ///////////////////////////////////////////////////////////////////
+			 //				LOCAL VARIABLES/OBJECTS
+			 ///////////////////////////////////////////////////////////////////
+			 System::Media::SoundPlayer		soundPlayer( "wav/Portal.wav");
+			 ///////////////////////////////////////////////////////////////////
+
+			 soundPlayer.Play();
 		 }
 };
 }
