@@ -10,7 +10,7 @@
 ***   Course # and Title		:	   		CISC 192 - C++			***
 ***   Class Meeting Time		:	   		TTh 9:35 - 12:40		***
 ***   Instructor				:			Professor Forman		***
-***   Hours						:			11						***
+***   Hours						:			12						***
 ***   Difficulty				:			6						***
 ***   Completion Date			:			11/13/2012				***
 ***   Project Name				:  			JohnnysBlackJack		***	 
@@ -55,14 +55,20 @@
 ***																	***
 ***						      MEDIA				                    ***
 ***																	***
+***		Background music during game:								***
+***		http://www.youtube.com/watch?v=Y6ljFaKRTrI					***
+***																	***
 ***		Farewell music:												***
-***	http://www.gamefront.com/files/12899141/Portal_Radio_Loop		***
+***		http://www.gamefront.com/files/12899141/Portal_Radio_Loop	***
 ***																	***
 ***		Jose's cards from class, provided by Professor Forman		***
 ***																	***
 ***		Animated gif of blackjack dealing							***
 ***			(used gifsoup.com to convert video to gif)				***
-***	http://www.youtube.com/watch?v=V6WQrbauJEQ						***
+***		http://www.youtube.com/watch?v=V6WQrbauJEQ					***
+***																	***
+***		Background image:											***
+***	http://www.customtablefelt.com/images/suited-poker-felt/suited-poker-table-felt-400x300.jpg
 ***																	***
 ***********************************************************************
 ***********************************************************************
@@ -213,8 +219,10 @@ namespace JohnnysBlackJack {
 			// 
 			// labelWelcome
 			// 
+			this->labelWelcome->BackColor = System::Drawing::Color::Transparent;
 			this->labelWelcome->Font = (gcnew System::Drawing::Font(L"Stencil", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->labelWelcome->ForeColor = System::Drawing::Color::Yellow;
 			this->labelWelcome->Location = System::Drawing::Point(215, 18);
 			this->labelWelcome->Name = L"labelWelcome";
 			this->labelWelcome->Size = System::Drawing::Size(824, 81);
@@ -225,8 +233,10 @@ namespace JohnnysBlackJack {
 			// labelDateTime
 			// 
 			this->labelDateTime->AutoSize = true;
+			this->labelDateTime->BackColor = System::Drawing::Color::Transparent;
 			this->labelDateTime->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->labelDateTime->ForeColor = System::Drawing::Color::Yellow;
 			this->labelDateTime->Location = System::Drawing::Point(13, 13);
 			this->labelDateTime->Name = L"labelDateTime";
 			this->labelDateTime->Size = System::Drawing::Size(198, 24);
@@ -235,12 +245,13 @@ namespace JohnnysBlackJack {
 			// 
 			// buttonDateTime
 			// 
+			this->buttonDateTime->BackColor = System::Drawing::Color::Yellow;
 			this->buttonDateTime->Location = System::Drawing::Point(44, 40);
 			this->buttonDateTime->Name = L"buttonDateTime";
 			this->buttonDateTime->Size = System::Drawing::Size(134, 30);
 			this->buttonDateTime->TabIndex = 2;
 			this->buttonDateTime->Text = L"Update Date and Time";
-			this->buttonDateTime->UseVisualStyleBackColor = true;
+			this->buttonDateTime->UseVisualStyleBackColor = false;
 			this->buttonDateTime->Click += gcnew System::EventHandler(this, &Form1::buttonDateTime_Click);
 			// 
 			// pictureBoxBJGif
@@ -254,49 +265,55 @@ namespace JohnnysBlackJack {
 			// 
 			// buttonInstructions
 			// 
-			this->buttonInstructions->Location = System::Drawing::Point(12, 527);
+			this->buttonInstructions->BackColor = System::Drawing::Color::Yellow;
+			this->buttonInstructions->Location = System::Drawing::Point(12, 500);
 			this->buttonInstructions->Name = L"buttonInstructions";
-			this->buttonInstructions->Size = System::Drawing::Size(75, 23);
+			this->buttonInstructions->Size = System::Drawing::Size(150, 50);
 			this->buttonInstructions->TabIndex = 4;
 			this->buttonInstructions->Text = L"Instructions";
-			this->buttonInstructions->UseVisualStyleBackColor = true;
+			this->buttonInstructions->UseVisualStyleBackColor = false;
 			this->buttonInstructions->Click += gcnew System::EventHandler(this, &Form1::buttonInstructions_Click);
 			// 
 			// buttonLogin
 			// 
-			this->buttonLogin->Location = System::Drawing::Point(567, 527);
+			this->buttonLogin->BackColor = System::Drawing::Color::Yellow;
+			this->buttonLogin->Location = System::Drawing::Point(536, 500);
 			this->buttonLogin->Name = L"buttonLogin";
-			this->buttonLogin->Size = System::Drawing::Size(75, 23);
+			this->buttonLogin->Size = System::Drawing::Size(200, 50);
 			this->buttonLogin->TabIndex = 5;
 			this->buttonLogin->Text = L"Login";
-			this->buttonLogin->UseVisualStyleBackColor = true;
+			this->buttonLogin->UseVisualStyleBackColor = false;
 			this->buttonLogin->Click += gcnew System::EventHandler(this, &Form1::buttonLogin_Click);
 			// 
 			// buttonExit
 			// 
-			this->buttonExit->Location = System::Drawing::Point(1177, 527);
+			this->buttonExit->BackColor = System::Drawing::Color::Yellow;
+			this->buttonExit->Location = System::Drawing::Point(1102, 500);
 			this->buttonExit->Name = L"buttonExit";
-			this->buttonExit->Size = System::Drawing::Size(75, 23);
+			this->buttonExit->Size = System::Drawing::Size(150, 50);
 			this->buttonExit->TabIndex = 6;
 			this->buttonExit->Text = L"Exit";
-			this->buttonExit->UseVisualStyleBackColor = true;
+			this->buttonExit->UseVisualStyleBackColor = false;
 			this->buttonExit->Click += gcnew System::EventHandler(this, &Form1::buttonExit_Click);
 			// 
 			// buttonCredits
 			// 
-			this->buttonCredits->Location = System::Drawing::Point(1177, 498);
+			this->buttonCredits->BackColor = System::Drawing::Color::Yellow;
+			this->buttonCredits->Location = System::Drawing::Point(1102, 444);
 			this->buttonCredits->Name = L"buttonCredits";
-			this->buttonCredits->Size = System::Drawing::Size(75, 23);
+			this->buttonCredits->Size = System::Drawing::Size(150, 50);
 			this->buttonCredits->TabIndex = 7;
 			this->buttonCredits->Text = L"Credits";
-			this->buttonCredits->UseVisualStyleBackColor = true;
+			this->buttonCredits->UseVisualStyleBackColor = false;
 			this->buttonCredits->Click += gcnew System::EventHandler(this, &Form1::buttonCredits_Click);
 			// 
 			// labelEnterName
 			// 
 			this->labelEnterName->AutoSize = true;
+			this->labelEnterName->BackColor = System::Drawing::Color::Transparent;
 			this->labelEnterName->Font = (gcnew System::Drawing::Font(L"Candara", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->labelEnterName->ForeColor = System::Drawing::Color::Yellow;
 			this->labelEnterName->Location = System::Drawing::Point(385, 327);
 			this->labelEnterName->Name = L"labelEnterName";
 			this->labelEnterName->Size = System::Drawing::Size(257, 29);
@@ -316,23 +333,25 @@ namespace JohnnysBlackJack {
 			// 
 			// buttonSubmit
 			// 
-			this->buttonSubmit->Location = System::Drawing::Point(567, 498);
+			this->buttonSubmit->BackColor = System::Drawing::Color::Yellow;
+			this->buttonSubmit->Location = System::Drawing::Point(536, 444);
 			this->buttonSubmit->Name = L"buttonSubmit";
-			this->buttonSubmit->Size = System::Drawing::Size(75, 23);
+			this->buttonSubmit->Size = System::Drawing::Size(200, 50);
 			this->buttonSubmit->TabIndex = 11;
 			this->buttonSubmit->Text = L"Submit";
-			this->buttonSubmit->UseVisualStyleBackColor = true;
+			this->buttonSubmit->UseVisualStyleBackColor = false;
 			this->buttonSubmit->Visible = false;
 			this->buttonSubmit->Click += gcnew System::EventHandler(this, &Form1::buttonSubmit_Click);
 			// 
 			// buttonResults
 			// 
-			this->buttonResults->Location = System::Drawing::Point(12, 498);
+			this->buttonResults->BackColor = System::Drawing::Color::Yellow;
+			this->buttonResults->Location = System::Drawing::Point(11, 444);
 			this->buttonResults->Name = L"buttonResults";
-			this->buttonResults->Size = System::Drawing::Size(75, 23);
+			this->buttonResults->Size = System::Drawing::Size(150, 50);
 			this->buttonResults->TabIndex = 12;
 			this->buttonResults->Text = L"Results";
-			this->buttonResults->UseVisualStyleBackColor = true;
+			this->buttonResults->UseVisualStyleBackColor = false;
 			this->buttonResults->Visible = false;
 			this->buttonResults->Click += gcnew System::EventHandler(this, &Form1::buttonResults_Click);
 			// 
@@ -395,6 +414,7 @@ namespace JohnnysBlackJack {
 			// 
 			// pictureBoxPlayerCard1
 			// 
+			this->pictureBoxPlayerCard1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBoxPlayerCard1->Location = System::Drawing::Point(17, 124);
 			this->pictureBoxPlayerCard1->Name = L"pictureBoxPlayerCard1";
 			this->pictureBoxPlayerCard1->Size = System::Drawing::Size(73, 97);
@@ -403,6 +423,7 @@ namespace JohnnysBlackJack {
 			// 
 			// pictureBoxPlayerCard2
 			// 
+			this->pictureBoxPlayerCard2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBoxPlayerCard2->Location = System::Drawing::Point(96, 227);
 			this->pictureBoxPlayerCard2->Name = L"pictureBoxPlayerCard2";
 			this->pictureBoxPlayerCard2->Size = System::Drawing::Size(73, 97);
@@ -411,6 +432,7 @@ namespace JohnnysBlackJack {
 			// 
 			// pictureBoxPlayerCard3
 			// 
+			this->pictureBoxPlayerCard3->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBoxPlayerCard3->Location = System::Drawing::Point(175, 330);
 			this->pictureBoxPlayerCard3->Name = L"pictureBoxPlayerCard3";
 			this->pictureBoxPlayerCard3->Size = System::Drawing::Size(73, 97);
@@ -419,6 +441,7 @@ namespace JohnnysBlackJack {
 			// 
 			// pictureBoxDealerCard1
 			// 
+			this->pictureBoxDealerCard1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBoxDealerCard1->Location = System::Drawing::Point(1177, 127);
 			this->pictureBoxDealerCard1->Name = L"pictureBoxDealerCard1";
 			this->pictureBoxDealerCard1->Size = System::Drawing::Size(73, 97);
@@ -427,6 +450,7 @@ namespace JohnnysBlackJack {
 			// 
 			// pictureBoxDealerCard2
 			// 
+			this->pictureBoxDealerCard2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBoxDealerCard2->Location = System::Drawing::Point(1098, 230);
 			this->pictureBoxDealerCard2->Name = L"pictureBoxDealerCard2";
 			this->pictureBoxDealerCard2->Size = System::Drawing::Size(73, 97);
@@ -435,6 +459,7 @@ namespace JohnnysBlackJack {
 			// 
 			// pictureBoxDealerCard3
 			// 
+			this->pictureBoxDealerCard3->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBoxDealerCard3->Location = System::Drawing::Point(1019, 330);
 			this->pictureBoxDealerCard3->Name = L"pictureBoxDealerCard3";
 			this->pictureBoxDealerCard3->Size = System::Drawing::Size(73, 97);
@@ -444,6 +469,8 @@ namespace JohnnysBlackJack {
 			// labelPlayerCardValue1
 			// 
 			this->labelPlayerCardValue1->AutoSize = true;
+			this->labelPlayerCardValue1->BackColor = System::Drawing::Color::Transparent;
+			this->labelPlayerCardValue1->ForeColor = System::Drawing::Color::Yellow;
 			this->labelPlayerCardValue1->Location = System::Drawing::Point(17, 105);
 			this->labelPlayerCardValue1->Name = L"labelPlayerCardValue1";
 			this->labelPlayerCardValue1->Size = System::Drawing::Size(65, 13);
@@ -454,6 +481,8 @@ namespace JohnnysBlackJack {
 			// labelPlayerCardValue2
 			// 
 			this->labelPlayerCardValue2->AutoSize = true;
+			this->labelPlayerCardValue2->BackColor = System::Drawing::Color::Transparent;
+			this->labelPlayerCardValue2->ForeColor = System::Drawing::Color::Yellow;
 			this->labelPlayerCardValue2->Location = System::Drawing::Point(96, 211);
 			this->labelPlayerCardValue2->Name = L"labelPlayerCardValue2";
 			this->labelPlayerCardValue2->Size = System::Drawing::Size(65, 13);
@@ -464,6 +493,8 @@ namespace JohnnysBlackJack {
 			// labelPlayerCardValue3
 			// 
 			this->labelPlayerCardValue3->AutoSize = true;
+			this->labelPlayerCardValue3->BackColor = System::Drawing::Color::Transparent;
+			this->labelPlayerCardValue3->ForeColor = System::Drawing::Color::Yellow;
 			this->labelPlayerCardValue3->Location = System::Drawing::Point(175, 314);
 			this->labelPlayerCardValue3->Name = L"labelPlayerCardValue3";
 			this->labelPlayerCardValue3->Size = System::Drawing::Size(65, 13);
@@ -474,6 +505,8 @@ namespace JohnnysBlackJack {
 			// labelDealerCardValue1
 			// 
 			this->labelDealerCardValue1->AutoSize = true;
+			this->labelDealerCardValue1->BackColor = System::Drawing::Color::Transparent;
+			this->labelDealerCardValue1->ForeColor = System::Drawing::Color::Yellow;
 			this->labelDealerCardValue1->Location = System::Drawing::Point(1172, 108);
 			this->labelDealerCardValue1->Name = L"labelDealerCardValue1";
 			this->labelDealerCardValue1->Size = System::Drawing::Size(65, 13);
@@ -484,6 +517,8 @@ namespace JohnnysBlackJack {
 			// labelDealerCardValue2
 			// 
 			this->labelDealerCardValue2->AutoSize = true;
+			this->labelDealerCardValue2->BackColor = System::Drawing::Color::Transparent;
+			this->labelDealerCardValue2->ForeColor = System::Drawing::Color::Yellow;
 			this->labelDealerCardValue2->Location = System::Drawing::Point(1095, 211);
 			this->labelDealerCardValue2->Name = L"labelDealerCardValue2";
 			this->labelDealerCardValue2->Size = System::Drawing::Size(65, 13);
@@ -494,6 +529,8 @@ namespace JohnnysBlackJack {
 			// labelDealerCardValue3
 			// 
 			this->labelDealerCardValue3->AutoSize = true;
+			this->labelDealerCardValue3->BackColor = System::Drawing::Color::Transparent;
+			this->labelDealerCardValue3->ForeColor = System::Drawing::Color::Yellow;
 			this->labelDealerCardValue3->Location = System::Drawing::Point(1016, 314);
 			this->labelDealerCardValue3->Name = L"labelDealerCardValue3";
 			this->labelDealerCardValue3->Size = System::Drawing::Size(65, 13);
@@ -503,41 +540,46 @@ namespace JohnnysBlackJack {
 			// 
 			// buttonDeal
 			// 
+			this->buttonDeal->BackColor = System::Drawing::Color::Yellow;
 			this->buttonDeal->Location = System::Drawing::Point(466, 314);
 			this->buttonDeal->Name = L"buttonDeal";
 			this->buttonDeal->Size = System::Drawing::Size(75, 23);
 			this->buttonDeal->TabIndex = 25;
 			this->buttonDeal->Text = L"Deal";
-			this->buttonDeal->UseVisualStyleBackColor = true;
+			this->buttonDeal->UseVisualStyleBackColor = false;
 			this->buttonDeal->Visible = false;
 			this->buttonDeal->Click += gcnew System::EventHandler(this, &Form1::buttonDeal_Click);
 			// 
 			// buttonHit
 			// 
+			this->buttonHit->BackColor = System::Drawing::Color::Yellow;
 			this->buttonHit->Location = System::Drawing::Point(547, 314);
 			this->buttonHit->Name = L"buttonHit";
 			this->buttonHit->Size = System::Drawing::Size(75, 23);
 			this->buttonHit->TabIndex = 26;
 			this->buttonHit->Text = L"Hit";
-			this->buttonHit->UseVisualStyleBackColor = true;
+			this->buttonHit->UseVisualStyleBackColor = false;
 			this->buttonHit->Visible = false;
 			this->buttonHit->Click += gcnew System::EventHandler(this, &Form1::buttonHit_Click);
 			// 
 			// buttonStay
 			// 
+			this->buttonStay->BackColor = System::Drawing::Color::Yellow;
 			this->buttonStay->Location = System::Drawing::Point(628, 314);
 			this->buttonStay->Name = L"buttonStay";
 			this->buttonStay->Size = System::Drawing::Size(75, 23);
 			this->buttonStay->TabIndex = 27;
 			this->buttonStay->Text = L"Stay";
-			this->buttonStay->UseVisualStyleBackColor = true;
+			this->buttonStay->UseVisualStyleBackColor = false;
 			this->buttonStay->Visible = false;
 			this->buttonStay->Click += gcnew System::EventHandler(this, &Form1::buttonStay_Click);
 			// 
 			// labelPlayerObservation
 			// 
+			this->labelPlayerObservation->BackColor = System::Drawing::Color::Transparent;
 			this->labelPlayerObservation->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->labelPlayerObservation->ForeColor = System::Drawing::Color::Yellow;
 			this->labelPlayerObservation->Location = System::Drawing::Point(99, 99);
 			this->labelPlayerObservation->Name = L"labelPlayerObservation";
 			this->labelPlayerObservation->Size = System::Drawing::Size(350, 23);
@@ -548,8 +590,10 @@ namespace JohnnysBlackJack {
 			// 
 			// labelDealerObservation
 			// 
+			this->labelDealerObservation->BackColor = System::Drawing::Color::Transparent;
 			this->labelDealerObservation->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->labelDealerObservation->ForeColor = System::Drawing::Color::Yellow;
 			this->labelDealerObservation->Location = System::Drawing::Point(813, 99);
 			this->labelDealerObservation->Name = L"labelDealerObservation";
 			this->labelDealerObservation->Size = System::Drawing::Size(241, 23);
@@ -559,9 +603,11 @@ namespace JohnnysBlackJack {
 			// 
 			// labelDealerAction
 			// 
+			this->labelDealerAction->BackColor = System::Drawing::Color::Transparent;
 			this->labelDealerAction->Font = (gcnew System::Drawing::Font(L"Cambria", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->labelDealerAction->Location = System::Drawing::Point(254, 389);
+			this->labelDealerAction->ForeColor = System::Drawing::Color::Yellow;
+			this->labelDealerAction->Location = System::Drawing::Point(254, 381);
 			this->labelDealerAction->Name = L"labelDealerAction";
 			this->labelDealerAction->Size = System::Drawing::Size(759, 106);
 			this->labelDealerAction->TabIndex = 30;
@@ -570,8 +616,10 @@ namespace JohnnysBlackJack {
 			// labelGameNumber
 			// 
 			this->labelGameNumber->AutoSize = true;
+			this->labelGameNumber->BackColor = System::Drawing::Color::Transparent;
 			this->labelGameNumber->Font = (gcnew System::Drawing::Font(L"Cambria", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->labelGameNumber->ForeColor = System::Drawing::Color::Yellow;
 			this->labelGameNumber->Location = System::Drawing::Point(562, 356);
 			this->labelGameNumber->Name = L"labelGameNumber";
 			this->labelGameNumber->Size = System::Drawing::Size(80, 25);
@@ -581,8 +629,12 @@ namespace JohnnysBlackJack {
 			// 
 			// comboBoxCheat
 			// 
+			this->comboBoxCheat->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(111)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(53)));
+			this->comboBoxCheat->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->comboBoxCheat->Font = (gcnew System::Drawing::Font(L"Candara", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->comboBoxCheat->ForeColor = System::Drawing::Color::Yellow;
 			this->comboBoxCheat->FormattingEnabled = true;
 			this->comboBoxCheat->Items->AddRange(gcnew cli::array< System::Object^  >(12) {L"Player gets BlackJack", L"Dealer gets BlackJack", 
 				L"Both get BlackJack", L"Player Busts and Dealer under threshold", L"Player Busts and Dealer within threshold", L"Dealer Busts and Player does not", 
@@ -596,20 +648,23 @@ namespace JohnnysBlackJack {
 			// 
 			// buttonCheat
 			// 
+			this->buttonCheat->BackColor = System::Drawing::Color::Yellow;
 			this->buttonCheat->Location = System::Drawing::Point(709, 314);
 			this->buttonCheat->Name = L"buttonCheat";
 			this->buttonCheat->Size = System::Drawing::Size(75, 23);
 			this->buttonCheat->TabIndex = 33;
 			this->buttonCheat->Text = L"Cheat";
-			this->buttonCheat->UseVisualStyleBackColor = true;
+			this->buttonCheat->UseVisualStyleBackColor = false;
 			this->buttonCheat->Visible = false;
 			this->buttonCheat->Click += gcnew System::EventHandler(this, &Form1::buttonCheat_Click);
 			// 
 			// labelSelectCheat
 			// 
 			this->labelSelectCheat->AutoSize = true;
+			this->labelSelectCheat->BackColor = System::Drawing::Color::Transparent;
 			this->labelSelectCheat->Font = (gcnew System::Drawing::Font(L"Candara", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->labelSelectCheat->ForeColor = System::Drawing::Color::Yellow;
 			this->labelSelectCheat->Location = System::Drawing::Point(790, 319);
 			this->labelSelectCheat->Name = L"labelSelectCheat";
 			this->labelSelectCheat->Size = System::Drawing::Size(216, 18);
@@ -619,22 +674,27 @@ namespace JohnnysBlackJack {
 			// 
 			// labelPlayerStats
 			// 
-			this->labelPlayerStats->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->labelPlayerStats->BackColor = System::Drawing::Color::Transparent;
+			this->labelPlayerStats->Font = (gcnew System::Drawing::Font(L"Candara", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->labelPlayerStats->Location = System::Drawing::Point(358, 124);
+			this->labelPlayerStats->ForeColor = System::Drawing::Color::Yellow;
+			this->labelPlayerStats->Location = System::Drawing::Point(202, 150);
 			this->labelPlayerStats->Name = L"labelPlayerStats";
-			this->labelPlayerStats->Size = System::Drawing::Size(102, 177);
+			this->labelPlayerStats->Size = System::Drawing::Size(258, 154);
 			this->labelPlayerStats->TabIndex = 35;
 			this->labelPlayerStats->Text = L"Wins: \r\n\r\nLosses: ";
+			this->labelPlayerStats->TextAlign = System::Drawing::ContentAlignment::TopRight;
 			this->labelPlayerStats->Visible = false;
 			// 
 			// labelDealerStats
 			// 
-			this->labelDealerStats->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->labelDealerStats->BackColor = System::Drawing::Color::Transparent;
+			this->labelDealerStats->Font = (gcnew System::Drawing::Font(L"Candara", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->labelDealerStats->Location = System::Drawing::Point(813, 124);
+			this->labelDealerStats->ForeColor = System::Drawing::Color::Yellow;
+			this->labelDealerStats->Location = System::Drawing::Point(814, 150);
 			this->labelDealerStats->Name = L"labelDealerStats";
-			this->labelDealerStats->Size = System::Drawing::Size(138, 177);
+			this->labelDealerStats->Size = System::Drawing::Size(267, 154);
 			this->labelDealerStats->TabIndex = 36;
 			this->labelDealerStats->Text = L"Wins: \r\n\r\nLosses: ";
 			this->labelDealerStats->Visible = false;
@@ -643,7 +703,10 @@ namespace JohnnysBlackJack {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1264, 562);
+			this->Controls->Add(this->buttonSubmit);
+			this->Controls->Add(this->buttonLogin);
 			this->Controls->Add(this->labelDealerStats);
 			this->Controls->Add(this->labelPlayerStats);
 			this->Controls->Add(this->labelSelectCheat);
@@ -669,12 +732,10 @@ namespace JohnnysBlackJack {
 			this->Controls->Add(this->pictureBoxPlayerCard2);
 			this->Controls->Add(this->pictureBoxPlayerCard1);
 			this->Controls->Add(this->buttonResults);
-			this->Controls->Add(this->buttonSubmit);
 			this->Controls->Add(this->textBoxName);
 			this->Controls->Add(this->labelEnterName);
 			this->Controls->Add(this->buttonCredits);
 			this->Controls->Add(this->buttonExit);
-			this->Controls->Add(this->buttonLogin);
 			this->Controls->Add(this->buttonInstructions);
 			this->Controls->Add(this->pictureBoxBJGif);
 			this->Controls->Add(this->buttonDateTime);
@@ -720,64 +781,195 @@ namespace JohnnysBlackJack {
 ***************************************************************
 **************************************************************/
 
-	private: System::Void buttonDateTime_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 displayDateTime();
-			 }
+private: System::Void buttonCheat_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 ///////////////////////////////////////////////////////////////////
+			 //				LOCAL VARIABLES/OBJECTS
+			 ///////////////////////////////////////////////////////////////////
+			 int playerLosses,
+				 dealerLosses;
+			 ///////////////////////////////////////////////////////////////////
+			 
+			 // Set game counter
+			 gameNumber++;
+			 labelGameNumber->Text = "Game #" + gameNumber;
 
-	private: System::Void buttonInstructions_Click(System::Object^  sender, System::EventArgs^  e) 
-			 {
-				 MessageBox::Show( "Login and click the DEAL button. Press HIT if you want another card.\n"
-								+ "Press STAY if you don't want another card.\n\n"
-								+ "You can set up certain scenarios with the CHEAT feature.\n\n"
-								+ "After the player and dealer have been randomly dealt two cards each:\n\n"
-								+ "If Black Jack occurs (= first two cards add up to 21) for either the player "
-								+ "or the dealer, then the game ends immediately and the Black Jacker is the winner.\n\n"
-								+ "Whenever the player goes \"bust\", the dealer immediately wins.\n\n"
-								+ "Player has first option to get \"hit\"; after player's last hit, it's the dealer's turn.\n\n"
-								+ "Each participant can get a maximum of 3 cards.\n\n"
-								+ "The dealer stays on 16 or higher and hits under 16.\n\n"
-								+ "If the player has not gone \"bust\" and the dealer does \"bust\", then the player wins immediately.\n\n"
-								+ "If neither the player nor dealer has gone \"bust\", then the higher total wins.\n\n"
-								+ "In case of a tie, the dealer wins." );
-			 }
+			 // Update Stats
+			 playerLosses = gameNumber - (gameNumber - dealerWins);
+			 dealerLosses = gameNumber - (gameNumber - playerWins);
+			 labelPlayerStats->Text = "Wins: " + playerWins + "\n\nLosses: " + playerLosses;
+			 labelDealerStats->Text = "Wins: " + dealerWins + "\n\nLosses: " + dealerLosses;
 
-/**************************************************************
-***************************************************************
-***                                                			***
-***   END EVENT-DRIVEN FUNCTION DECLARATIONS/DEFINITIONS    ***
-***                                                			***
-***************************************************************
-**************************************************************/
+			 // We are cheaters
+			 cheatActivated = true;
 
-/**************************************************************
-***************************************************************
-***                                                			***
-***			  START NON EVENT-DRIVEN FUNCTIONS				***
-***                                                			***
-***************************************************************
-**************************************************************/
+			 // Reset hand value
+			 playerCardValueSum = 0;
+			 dealerCardValueSum = 0;
 
-void displayDateTime()
-{
-	///////////////////////////////////////////////////////
-	//				LOCAL VARIABLES/OBJECTS
-	///////////////////////////////////////////////////////
-	DateTime dateTimeNow = DateTime::Now;
-	///////////////////////////////////////////////////////
+			 // Reset action label
+			 labelDealerAction->Text = "";
 
-	labelDateTime->Text = dateTimeNow.ToString();
-						//+ "\n\t"
-						//+ dateTimeNow.ToShortTimeString();		
-}
+			 // Make sure extra cards are not displayed
+			 pictureBoxPlayerCard3->Visible = false;
+			 labelPlayerCardValue3->Visible = false;
+			 pictureBoxDealerCard3->Visible = false;
+			 labelDealerCardValue3->Visible = false;
 
-/**************************************************************
-***************************************************************
-***                                                			***
-***			    END NON EVENT-DRIVEN FUNCTIONS				***
-***                                                			***
-***************************************************************
-**************************************************************/
+			 // Deal opening hands like cheaters do
+			 for (int i = 100; i <= 106; i++)
+				 dealCard(i);
+		 }
+
+private: System::Void buttonCredits_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 MessageBox::Show( 
+				"*************************************************************************************\n"
+				 "**************************************** ID INFO ************************************\n\n"
+				 "	Programmer		:	Johnny Brinsko\n"
+				 "	Assignment #		:	Program #2\n"
+				 "	Assignment Name		:	Black Jack\n"
+				 "	Course # and Title		:	CISC 192  - C++\n"
+				 "	Class Meeting Time		:	TTh 9:35 - 12:40\n"
+				 "	Instructor			:	Professor Forman\n"
+				 "	Hours			:	12\n"
+				 "	Difficulty			:	6\n"
+				 "	Completion Date		:	11/13/2012\n"
+				 "	Project Name		:	JohnnysBlackJack\n\n"
+				 "**************************************************************************************\n"
+				 "**************************************** CREDITS ************************************\n\n"
+				 "	Thanks to Professor Forman and Tim for completing the \n"
+				 "			learning triangle together\n\n"
+				 "*************************************************************************************\n"
+				 "**************************************** MEDIA *************************************\n\n"
+				 "Background music during game:\n"
+				 "http://www.youtube.com/watch?v=Y6ljFaKRTrI"
+				 "\n\nFarewell music:\n"
+				 "http://www.gamefront.com/files/12899141/Portal_Radio_Loop" 
+				 "\n\nJose's cards from class, provided by Professor Forman"
+				 "\n\nAnimated gif of blackjack dealing\n"
+				 "	(used gifsoup.com to convert video to gif)\n"
+				 "http://www.youtube.com/watch?v=V6WQrbauJEQ"
+				 "\n\nBackground image:\n"
+				 "http://www.customtablefelt.com/images/suited-poker-felt/suited-poker-table-felt-400x300.jpg"
+				 );
+		MessageBox::Show(
+				 "*************************************************************************************\n"
+				 "************************************** # OF STARS **********************************\n\n"
+				 "2 stars\n\n"
+				 "*************************************************************************************\n"
+				 "**************************************** STARS *************************************\n\n"
+				 "1. (2) Add a series of Cheat buttons that force certain basic hands to be dealt.\n"
+				 );
+		 }
+
+private: System::Void buttonDateTime_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 displayDateTime();
+		 }
+
+private: System::Void buttonDeal_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 ///////////////////////////////////////////////////////////////////
+			 //				LOCAL VARIABLES/OBJECTS
+			 ///////////////////////////////////////////////////////////////////
+			 int	playerLosses,
+					dealerLosses;
+			 ///////////////////////////////////////////////////////////////////
+			 
+			 // Set game counter
+			 gameNumber++;
+			 labelGameNumber->Text = "Game #" + gameNumber;
+
+			 // Update Stats
+			 playerLosses = gameNumber - (gameNumber - dealerWins);
+			 dealerLosses = gameNumber - (gameNumber - playerWins);
+			 labelPlayerStats->Text = "Wins: " + playerWins 
+									+ "\n\nLosses: " + playerLosses;
+			 labelDealerStats->Text = "Wins: " + dealerWins 
+									+ "\n\nLosses: " + dealerLosses;
+
+			 // Reset hand value
+			 playerCardValueSum = 0;
+			 dealerCardValueSum = 0;
+
+			 // Reset action label
+			 labelDealerAction->Text = "";
+
+			 // Mainly for the first deal, show card value labels
+			 labelPlayerCardValue1->Visible = true;
+			 labelPlayerCardValue2->Visible = true;
+			 labelDealerCardValue1->Visible = true;
+			 labelDealerCardValue2->Visible = true;
+
+			 // Make sure extra cards are not displayed
+			 pictureBoxPlayerCard3->Visible = false;
+			 labelPlayerCardValue3->Visible = false;
+			 pictureBoxDealerCard3->Visible = false;
+			 labelDealerCardValue3->Visible = false;
+
+			 // Deal opening hands
+			 for (int i = 1; i <= 4; i++)
+				 dealCard(i);
+		 }
+
+private: System::Void buttonExit_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 ///////////////////////////////////////////////////////////////////
+			 //				LOCAL VARIABLES/OBJECTS
+			 ///////////////////////////////////////////////////////////////////
+			 Windows::Forms::DialogResult	playAnother;
+			 System::Media::SoundPlayer		soundPlayer( "wav/portalradio.wav");
+			 ///////////////////////////////////////////////////////////////////
+
+			 soundPlayer.PlayLooping();
+
+			 if (dealerWins > playerWins)
+				MessageBox::Show("Thanks for being such a good sport, " + playerName + ", in your " + gameNumber + " games.\n\n"
+								+ "Too bad you won only " + playerWins + " game(s) while The Dealer won " + dealerWins + " game(s).");
+
+			 else if (dealerWins == playerWins)
+				 MessageBox::Show("After " + gameNumber + " games, " + playerName + ", you couldn't beat The Dealer.\n\n"
+								+ "You won " + playerWins + " game(s) while The Dealer won " + dealerWins + " game(s) as well.");
+
+			 else
+				 MessageBox::Show("I know you had fun, " + playerName + ", in your " + gameNumber + " games.\n\n"
+								+ "You outplayed The Dealer by winning " + playerWins + " game(s). The Dealer only won " + dealerWins + " game(s).");
+
+			 playAnother = MessageBox::Show("Do you want to play another game?", "Are you sure?", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+			 if (playAnother == Windows::Forms::DialogResult::No)
+				 Close();
+			 
+		 }
+
+private: System::Void buttonHit_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 pictureBoxPlayerCard3->Visible = true;
+			 labelPlayerCardValue3->Visible = true;
+			 dealCard(5);
+
+			 pictureBoxDealerCard3->Visible = true;
+			 labelDealerCardValue3->Visible = true;
+			 dealCard(6);
+		 }
+
+private: System::Void buttonInstructions_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 MessageBox::Show( "Login and click the DEAL button. Press HIT if you want another card.\n"
+							+ "Press STAY if you don't want another card.\n\n"
+							+ "You can set up certain scenarios with the CHEAT feature.\n\n"
+							+ "After the player and dealer have been randomly dealt two cards each:\n\n"
+							+ "If Black Jack occurs (= first two cards add up to 21) for either the player "
+							+ "or the dealer, then the game ends immediately and the Black Jacker is the winner.\n\n"
+							+ "Whenever the player goes \"bust\", the dealer immediately wins.\n\n"
+							+ "Player has first option to get \"hit\"; after player's last hit, it's the dealer's turn.\n\n"
+							+ "Each participant can get a maximum of 3 cards.\n\n"
+							+ "The dealer stays on 16 or higher and hits under 16.\n\n"
+							+ "If the player has not gone \"bust\" and the dealer does \"bust\", then the player wins immediately.\n\n"
+							+ "If neither the player nor dealer has gone \"bust\", then the higher total wins.\n\n"
+							+ "In case of a tie, the dealer wins." );
+		 }
 
 private: System::Void buttonLogin_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
@@ -785,6 +977,29 @@ private: System::Void buttonLogin_Click(System::Object^  sender, System::EventAr
 			 labelEnterName->Visible = true;
 			 textBoxName->Visible = true;
 			 textBoxName->Focus();
+		 }
+
+private: System::Void buttonResults_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 if (dealerWins > playerWins)
+				 MessageBox::Show("In the " + gameNumber + " games played,\n" + playerName + " has won "
+							+ playerWins + " game(s)\nThe Dealer has won " + dealerWins + " game(s)\n"
+							+ "So far, The Dealer has won more games!");
+			 else if (dealerWins == playerWins)
+				 MessageBox::Show("In the " + gameNumber + " games played,\n" + playerName + " has won "
+							+ playerWins + " game(s)\nThe Dealer has won " + dealerWins + " game(s)\n"
+			 				+ "So far, " + playerName + " has won the same amount of games as The Dealer.");
+			 else
+				 MessageBox::Show("In the " + gameNumber + " games played,\n" + playerName + " has won "
+							+ playerWins + " game(s)\nThe Dealer has won " + dealerWins + " game(s)\n"
+			 				+ playerName + " has won more games!");
+		 }
+
+private: System::Void buttonStay_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 pictureBoxDealerCard3->Visible = true;
+			 labelDealerCardValue3->Visible = true;
+			 dealCard(6);
 		 }
 
 private: System::Void buttonSubmit_Click(System::Object^  sender, System::EventArgs^  e) 
@@ -803,10 +1018,6 @@ private: System::Void buttonSubmit_Click(System::Object^  sender, System::EventA
 			 buttonHit->Visible = true;
 			 buttonStay->Visible = true;
 			 labelGameNumber->Visible = true;
-			 labelPlayerCardValue1->Visible = true;
-			 labelPlayerCardValue2->Visible = true;
-			 labelDealerCardValue1->Visible = true;
-			 labelDealerCardValue2->Visible = true;
 			 labelPlayerObservation->Visible = true;
 			 labelPlayerObservation->Text = playerName + "'s Hand Value: ";
 			 labelDealerObservation->Visible = true;
@@ -818,47 +1029,44 @@ private: System::Void buttonSubmit_Click(System::Object^  sender, System::EventA
 			 labelDealerStats->Visible = true;
 		 }
 
-private: System::Void buttonDeal_Click(System::Object^  sender, System::EventArgs^  e) 
+private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) 
 		 {
+			 ///////////////////////////////////////////////////////////////////
+			 //				LOCAL VARIABLES/OBJECTS
+			 ///////////////////////////////////////////////////////////////////
+			 System::Media::SoundPlayer		soundPlayer( "wav/Portal.wav");
+			 ///////////////////////////////////////////////////////////////////
 
-			 int playerLosses,
-				 dealerLosses;
-
-			 
-			 // Update Stats
-			 playerLosses = gameNumber - (gameNumber - dealerWins);
-			 dealerLosses = gameNumber - (gameNumber - playerWins);
-			 labelPlayerStats->Text = "Wins: " + playerWins + "\n\nLosses: " + playerLosses;
-			 labelDealerStats->Text = "Wins: " + dealerWins + "\n\nLosses: " + dealerLosses;
-
-			 // Set game counter
-			 gameNumber++;
-			 labelGameNumber->Text = "Game #" + gameNumber;
-
-			 // Reset hand value
-			 playerCardValueSum = 0;
-			 dealerCardValueSum = 0;
-
-			 // Reset action label
-			 labelDealerAction->Text = "";
-
-			 // Make sure extra cards are not displayed
-			 pictureBoxPlayerCard3->Visible = false;
-			 labelPlayerCardValue3->Visible = false;
-			 pictureBoxDealerCard3->Visible = false;
-			 labelDealerCardValue3->Visible = false;
-
-			 // Deal opening hands
-			 for (int i = 1; i <= 4; i++)
-				 dealCard(i);
+			 soundPlayer.Play();
 		 }
+
+/**************************************************************
+***************************************************************
+***                                                			***
+***   END EVENT-DRIVEN FUNCTION DECLARATIONS/DEFINITIONS    ***
+***                                                			***
+***************************************************************
+**************************************************************/
+
+/**************************************************************
+***************************************************************
+***                                                			***
+***			  START NON EVENT-DRIVEN FUNCTIONS				***
+***                                                			***
+***************************************************************
+**************************************************************/
+
+bool check21(int sum)
+{
+	return (sum == 21);
+}
 
 void dealCard(int cardToDeal)
 {
 	///////////////////////////////////////////////////////
 	//				LOCAL VARIABLES/OBJECTS
 	///////////////////////////////////////////////////////
-	int	intCardValue		= 0;
+	int	intCardValue	= 0;
 	///////////////////////////////////////////////////////
 
 	// Select a random card from the imageList
@@ -1315,19 +1523,7 @@ void dealCard(int cardToDeal)
 				labelDealerAction->Text = "That was a bad beat.";
 				dealerWins++;
 			}
-
-			/* Moved to after all cards dealt
-			// Player stands when Dealer is within threshold
-			else if (playerCardValueSum <= 15 && dealerCardValueSum >= 16)
-			{
-				// Hide the third card
-				pictureBoxDealerCard3->Visible = false;
-				labelDealerCardValue3->Visible = false;
-
-				labelDealerAction->Text = "You lose. You really should've hit.";
-				dealerWins++;
-			}*/
-
+			
 			//// Dealer does not take a third card if hand value is > 15 and Player busts
 			////else if (dealerCardValueSum > 15 || playerCardValueSum > 21)
 			//else if (dealerCardValueSum > 15 && playerCardValueSum > 21)
@@ -1391,160 +1587,24 @@ void dealCard(int cardToDeal)
 
 }
 
-bool check21(int sum)
+void displayDateTime()
 {
-	return (sum == 21);
+	///////////////////////////////////////////////////////
+	//				LOCAL VARIABLES/OBJECTS
+	///////////////////////////////////////////////////////
+	DateTime dateTimeNow = DateTime::Now;
+	///////////////////////////////////////////////////////
+
+	labelDateTime->Text = dateTimeNow.ToString();	
 }
 
-private: System::Void buttonHit_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 pictureBoxPlayerCard3->Visible = true;
-			 labelPlayerCardValue3->Visible = true;
-			 dealCard(5);
+/**************************************************************
+***************************************************************
+***                                                			***
+***			    END NON EVENT-DRIVEN FUNCTIONS				***
+***                                                			***
+***************************************************************
+**************************************************************/
 
-			 pictureBoxDealerCard3->Visible = true;
-			 labelDealerCardValue3->Visible = true;
-			 dealCard(6);
-		 }
-
-private: System::Void buttonStay_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 pictureBoxDealerCard3->Visible = true;
-			 labelDealerCardValue3->Visible = true;
-			 dealCard(6);
-		 }
-
-private: System::Void buttonCheat_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-
-			 int playerLosses,
-				 dealerLosses;
-
-			 
-			 // Update Stats
-			 playerLosses = gameNumber - (gameNumber - dealerWins);
-			 dealerLosses = gameNumber - (gameNumber - playerWins);
-			 labelPlayerStats->Text = "Wins: " + playerWins + "\n\nLosses: " + playerLosses;
-			 labelDealerStats->Text = "Wins: " + dealerWins + "\n\nLosses: " + dealerLosses;
-
-			 // We are cheaters
-			 cheatActivated = true;
-			 
-			 // Set game counter
-			 gameNumber++;
-			 labelGameNumber->Text = "Game #" + gameNumber;
-
-			 // Reset hand value
-			 playerCardValueSum = 0;
-			 dealerCardValueSum = 0;
-
-			 // Reset action label
-			 labelDealerAction->Text = "";
-
-			 // Make sure extra cards are not displayed
-			 pictureBoxPlayerCard3->Visible = false;
-			 labelPlayerCardValue3->Visible = false;
-			 pictureBoxDealerCard3->Visible = false;
-			 labelDealerCardValue3->Visible = false;
-
-			 // Deal opening hands
-			 for (int i = 100; i <= 106; i++)
-				 dealCard(i);
-		 }
-
-private: System::Void buttonResults_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 if (dealerWins > playerWins)
-				 MessageBox::Show("In the " + gameNumber + " games played,\n" + playerName + " has won "
-							+ playerWins + " game(s)\nThe Dealer has won " + dealerWins + " game(s)\n"
-							+ "So far, The Dealer has won more games!");
-			 else if (dealerWins == playerWins)
-				 MessageBox::Show("In the " + gameNumber + " games played,\n" + playerName + " has won "
-							+ playerWins + " game(s)\nThe Dealer has won " + dealerWins + " game(s)\n"
-			 				+ "So far, " + playerName + " has won the same amount of games as The Dealer.");
-			 else
-				 MessageBox::Show("In the " + gameNumber + " games played,\n" + playerName + " has won "
-							+ playerWins + " game(s)\nThe Dealer has won " + dealerWins + " game(s)\n"
-			 				+ playerName + " has won more games!");
-		 }
-
-private: System::Void buttonExit_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 ///////////////////////////////////////////////////////////////////
-			 //				LOCAL VARIABLES/OBJECTS
-			 ///////////////////////////////////////////////////////////////////
-			 Windows::Forms::DialogResult	playAnother;
-			 System::Media::SoundPlayer		soundPlayer( "wav/portalradio.wav");
-			 ///////////////////////////////////////////////////////////////////
-
-			 soundPlayer.PlayLooping();
-
-			 if (dealerWins > playerWins)
-				MessageBox::Show("Thanks for being such a good sport, " + playerName + ", in your " + gameNumber + " games.\n\n"
-								+ "Too bad you won only " + playerWins + " game(s) while The Dealer won " + dealerWins + " game(s).");
-
-			 else if (dealerWins == playerWins)
-				 MessageBox::Show("After " + gameNumber + " games, " + playerName + ", you couldn't beat The Dealer.\n\n"
-								+ "You won " + playerWins + " game(s) while The Dealer won " + dealerWins + " game(s) as well.");
-
-			 else
-				 MessageBox::Show("I know you had fun, " + playerName + ", in your " + gameNumber + " games.\n\n"
-								+ "You outplayed The Dealer by winning " + playerWins + " game(s). The Dealer only won " + dealerWins + " game(s).");
-
-			 playAnother = MessageBox::Show("Do you want to play another game?", "Are you sure?", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
-
-			 if (playAnother == Windows::Forms::DialogResult::No)
-				 Close();
-			 
-		 }
-
-private: System::Void buttonCredits_Click(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 MessageBox::Show( 
-				"*************************************************************************************\n"
-				 "**************************************** ID INFO ************************************\n\n"
-				 "	Programmer		:	Johnny Brinsko\n"
-				 "	Assignment #		:	Program #2\n"
-				 "	Assignment Name		:	Black Jack\n"
-				 "	Course # and Title		:	CISC 192  - C++\n"
-				 "	Class Meeting Time		:	TTh 9:35 - 12:40\n"
-				 "	Instructor			:	Professor Forman\n"
-				 "	Hours			:	11\n"
-				 "	Difficulty			:	6\n"
-				 "	Completion Date		:	11/13/2012\n"
-				 "	Project Name		:	JohnnysBlackJack\n\n"
-				 "**************************************************************************************\n"
-				 "**************************************** CREDITS ************************************\n\n"
-				 "	Thanks to Professor Forman and Tim for completing the \n"
-				 "			learning triangle together\n\n"
-				 "*************************************************************************************\n"
-				 "**************************************** MEDIA *************************************\n\n"
-				 "Farewell music:\n"
-				 "http://www.gamefront.com/files/12899141/Portal_Radio_Loop" 
-				 "\n\nJose's cards from class, provided by Professor Forman"
-				 "\n\nAnimated gif of blackjack dealing\n"
-				 "	(used gifsoup.com to convert video to gif)\n"
-				 "http://www.youtube.com/watch?v=V6WQrbauJEQ"
-				 );
-		MessageBox::Show(
-				 "*************************************************************************************\n"
-				 "************************************** # OF STARS **********************************\n\n"
-				 "2 stars\n\n"
-				 "*************************************************************************************\n"
-				 "**************************************** STARS *************************************\n\n"
-				 "1. (2) Add a series of Cheat buttons that force certain basic hands to be dealt.\n"
-				 );
-		 }
-
-private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) 
-		 {
-			 ///////////////////////////////////////////////////////////////////
-			 //				LOCAL VARIABLES/OBJECTS
-			 ///////////////////////////////////////////////////////////////////
-			 System::Media::SoundPlayer		soundPlayer( "wav/Portal.wav");
-			 ///////////////////////////////////////////////////////////////////
-
-			 soundPlayer.Play();
-		 }
 };
 }
