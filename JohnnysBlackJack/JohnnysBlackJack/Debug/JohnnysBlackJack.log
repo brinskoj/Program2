@@ -1,4 +1,4 @@
-﻿Build started 11/10/2012 4:20:09 PM.
+﻿Build started 11/10/2012 4:40:26 PM.
      1>Project "C:\Users\tripgod\Dropbox\cplusplus\Program2\JohnnysBlackJack\JohnnysBlackJack\JohnnysBlackJack.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\JohnnysBlackJack.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -29,4 +29,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.84
+Time Elapsed 00:00:04.07

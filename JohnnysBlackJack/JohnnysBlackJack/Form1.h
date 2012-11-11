@@ -20,22 +20,53 @@
 ***                                       							***
 ***						PROGRAM DESCRIPTION              			***
 ***																	***
-***	 
+***	 User logs in with name to open up the game board. Two cards	***
+***	 are dealt to the player and the dealer. The "deck" is just an	***
+***	 image list sorted by card value. Player has the option to hit	***
+***	 or stand. A hit gives the player one more card only and a card	***
+***	 for the dealer immediately after. A stand will just give one	***
+***	 card to the dealer. The cards are evaluated after the fourth	***
+***	 card is dealt and again after the last card is dealt. The game	***
+***	 results are shown at the bottom. There is a game counter, win	***
+***	 counter for player and dealer, and stats for both player and	***
+***	 dealer. There is a cheat button that provides several			***
+***	 scenarios via a combo box. The instruction button brings up	***
+***	 a message box and provides instructions for the game. The		***
+***	 button displays the wins for both player and dealer in a		***
+***	 message box. The credits button shows ID info, media used, and	***
+***	 stars earned. When the user clicks the Exit button, the player	***
+***	 is shown a farewell message with his and the dealer's wins,	***
+***	 and the message is tailored based on whether the player 		***
+***	 accrued more wins than the dealer or not. Then the player is	***
+***	 asked if he wants to play one more game. If not, the program	***
+***	 closes.														***
 ***                                                         		***
 ***********************************************************************
 ***********************************************************************
 ***																	***
 ***					Event-Defined Function List						***
 ***                                                         		***
-***		
+***		buttonCheat_Click											***
+***		buttonCredits_Click											***
+***		buttonDateTime_Click										***
+***		buttonDeal_Click											***
+***		buttonExit_Click											***
+***		buttonHit_Click												***
+***		buttonInstructions_Click									***
+***		buttonLogin_Click											***
+***		buttonResults_Click											***
+***		buttonStay_Click											***
+***		buttonSubmit_Click											***
+***		Form1_Load													***
 ***																	***
 ***********************************************************************
 ***********************************************************************
 ***																	***
 ***					Custom-Defined Function List					***
 ***                                                         		***
+***		check21														***
+***		dealCard													***
 ***		displayDateTime												***
-***		
 ***																	***
 ***********************************************************************
 ***********************************************************************
